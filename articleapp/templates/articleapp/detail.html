@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="container text-center">
+        <div class="my-3">
+           <h1>{{ target_article.title }}</h1>
+            <div>
+                <a href="{% url 'likeapp:article_like' article_pk=target_article.pk %}"
+                class = "material-icons"
+                style = "vertical-align: middle; font-size: 1.3rem;
+                        color: #f88">
+                favorite
+                </a>
+                <span style = "vertical-align: middle; font-size: 1.3rem">
+                    {{ target_article.like }}
+                </span>
+            </div>
+            <h4>{{ target_article.writer.profile.nickname }}</h4>
+            <q>{{ target_article.created_at }}</q>
+        </div>
+
+        <hr>
+
+        <div class="my-5">
+            <img src="{{ target_article.image.url }}"
+                 class="my-3 max_hw"
+                 alt="">
+            <div class="article_content">{{ target_article.content | safe }}</div>
+
+            {% if target_article.writer == request.user %}
+            <div>
+                <a href="{% url 'articleapp:update' pk=target_article.pk %}"
+                class="btn btn-success rounded-pill px-5">
+                    UPDATE
+                </a>
+                <a href="{% url 'articleapp:delete' pk=target_article.pk %}"
+                class="btn btn-danger rounded-pill px-5">
+                    DELETE
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+        <hr>
+
+        <div class="text-center my-4">
+            {#      댓글 내용, 댓글 작성창      #}
+
+            {% for comment in target_article.comment.all %}
+
+                <div class="comment_box">
+                    <div>
+                        <span class="NNS_B"
+                        style="font-size: 1.3rem">
+                            {{ comment.writer.profile.nickname }}</span>
+                        <span>{{ comment.created_at }}</span>
+                    </div>
+                    <div>
+                        <p>
+                            {{ comment.content }}
+                        </p>
+                    </div>
+                    {% if comment.writer == user %}
+                        <div style="text-align: right">
+                            <a href="{% url 'commentapp:delete' pk=comment.pk %}"
+                                class="btn btn-danger   rounded-pill px-5">
+                                Delete
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            {% include 'commentapp/create.html' %}
+        </div>
+    </div>
+
+{% endblock %}

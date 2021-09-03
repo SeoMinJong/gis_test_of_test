@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="mw-500 m-auto">
+        <div class="m-5">
+            <h3> login Up </h3>
+        </div>
+        <div>
+            <form action="{% url "accountapp:login" %}" method="post">
+    {#            account: login은 urls의 Login/과 이어지는 것으로 #}
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-outline-success px-5">
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+<body style="font-family: 'NanumBarunpenB'">
+    {% include 'header.html' %}
+
+    <hr>
+
+    {% for message in messages %}
+        <div class="text-center">
+            <div class="btn btn-{{ message.tags }} rounded-pill px-5">
+                {{ message }}
+            </div>
+        </div>
+    {% endfor %}
+
+    {% block content %}
+        {# 이걸로 web_power와 연결이 되서 가 화면상에 보이는걸까? #}
+    {% endblock %}
+
+    <hr>
+
+    {% include 'footer.html' %}
+</body>
+</html>

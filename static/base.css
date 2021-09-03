@@ -1,0 +1,95 @@
+.test1_header_logo{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.test1_header_button{
+margin: 0 0.3rem;
+}
+
+.test1_footer_button{
+    margin-top: 1.5rem;
+}
+
+.test1_footer_logo{
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.mw-500{
+    max-width: 400px;
+    margin: 1rem 1.8rem;
+}
+
+.profile_image{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 15rem;
+    object-fit: cover;
+}
+
+.NNS_B{
+    font-family: "NanumBarunpenB", cursive;
+}
+
+.round_button{
+    color: darkgray;
+    text-decoration: none;
+    box-shadow: 0 0 3px black;
+    border-radius: 20rem;
+    padding: 0.3rem;
+}
+
+.round_button:hover{
+color: darkgray;
+}
+
+.article_content{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.article_img{
+    border-radius: 2rem;
+    height: 40%;
+    box-shadow: 0 0 1rem darkgray;
+}
+
+.border_color{
+    border-color: red green blue pink;
+    border-right: 1rem;
+    border-bottom: 1rem;
+}
+
+.comment_box{
+    text-align: left;
+    border: solid aquamarine;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.max_hw{
+    max-width: 800px;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 500px){
+    html{
+        /* default font-size 14 px*/
+        font-size: 13px;
+    }
+}
