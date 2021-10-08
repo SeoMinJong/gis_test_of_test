@@ -93,3 +93,8 @@ a:hover{
         font-size: 13px;
     }
 }
+
+.back_ground-img{
+    background-image: url(극세사이불텍스처.JPG);
+    background-size: contain;
+}

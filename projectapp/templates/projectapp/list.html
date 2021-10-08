@@ -19,12 +19,12 @@
         }
 
         .container img{
-            width: 7rem;
-            height: 7rem;
+            width: 20rem;
+            height: 20rem;
             border-radius: 1rem;
             object-fit: cover;
+        {#  object-fit:cover : 사진을 크기에 맞춰서 조절하여 사진의 비율을 맞춰준다.  #}
         }
-
     </style>
 
     <div class="container my-4">
@@ -35,7 +35,7 @@
                          alt="">
                 </a>
                 <span class="NNS_B my-2">{{ project.name | truncatechars:10 }}</span>
-
+                                                        {# truncatechars : 글자를 제한해줄 수 있는 장고 제공 필터 #}
             </div>
         {% endfor %}
     </div>
